@@ -69,7 +69,7 @@ class DOMNodeComparator extends ObjectComparator
     {
         if ($canonicalize) {
             $document = new DOMDocument;
-            @$document->loadXML($node->C14N());
+            @$document->loadXML('<?xml version="1.0" encoding="utf-8"?>' . \PHP_EOL . $node->C14N());
 
             $node = $document;
         }
